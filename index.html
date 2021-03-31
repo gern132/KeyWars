@@ -21,10 +21,31 @@
 
         <div class="game hidden">
             <div class="game__header">
-                <img class='game__arrow' src="img/arrow.svg" alt="" onclick="arrow()">
+                <svg onclick="arrow()" class='game__arrow' width="64" height="47" viewBox="0 0 64 47" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21.8257 45.9091C22.2197 46.3021 22.7327 46.4991 23.2477 46.4991C23.7627 46.4991 24.2767 46.3021 24.6697 45.9091C25.4547 45.1241 25.4547 43.8511 24.6697 43.0661L6.86475 25.2601H61.6457C62.7567 25.2601 63.6567 24.3601 63.6567 23.2501C63.6567 22.1401 62.7577 21.2391 61.6457 21.2391H6.86475L24.6697 3.43213C25.4547 2.64713 25.4547 1.37413 24.6697 0.589125C23.8847 -0.195875 22.6117 -0.196875 21.8257 0.589125L0.58875 21.8281C-0.19625 22.6141 -0.19625 23.8861 0.58875 24.6711L21.8257 45.9091Z" fill="white"/>
+                    </svg>
+                    
             </div>
             <div class="game__main">
                 <button class='game__start' onclick="start()">Start</button>
+                <div class="game__speed">
+                    <p class='level-up'>Speed Score</p>
+                    <div class="game__score">
+                        <div class="minus">
+                            <svg class="minus-svg min" onclick="minusN()" width="60" height="10" viewBox="0 0 60 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M3.59985 10H56.3997C58.3882 10 60 7.76182 60 4.99966C60 2.23818 58.3887 0 56.3997 0H3.59985C1.61176 0.000684041 0 2.23887 0 5.00034C0 7.76182 1.61176 10 3.59985 10Z" />
+                                </svg>
+                                
+                        </div>
+                        <div class="score"></div>
+                        <div class="plus">
+                            <svg class="minus-svg plu" onclick="plusN()" width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M56.9998 27H33.0002V2.99982C33.0002 1.34418 31.656 0 29.9998 0C28.3442 0 27 1.34418 27 2.99982V27H2.99982C1.34418 27 0 28.3442 0 29.9998C0 31.656 1.34418 33.0002 2.99982 33.0002H27V56.9998C27 58.656 28.3442 60.0002 29.9998 60.0002C31.656 60.0002 33.0002 58.656 33.0002 56.9998V33.0002H56.9998C58.656 33.0002 60.0002 31.656 60.0002 29.9998C60.0002 28.3442 58.656 27 56.9998 27Z" >
+                                </svg>
+                                
+                        </div>
+                    </div>
+                </div>
                 <div class="game__level hidden"></div>
                 <div class="game__over hidden">GAME OVER</div>
             </div>

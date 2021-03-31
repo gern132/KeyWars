@@ -1,41 +1,53 @@
-function play() {
+function play() {   //button 'play'
     document.querySelector('.menu').classList.add('hidden'); 
     document.querySelector('.game').classList.remove('hidden'); 
 }
-function arrow() {
+
+function arrow() {  //step back
     document.querySelector('.game').classList.add('hidden');
     document.querySelector('.menu').classList.remove('hidden');
     document.querySelector('.game__start').classList.remove('hidden');
     document.querySelector('.game__level').classList.add('hidden');
-    document.querySelector('.game__over').classList.add('hidden');
+    document.querySelector('.game__over').classList.add('hidden'); 
+    document.querySelector('.level-up').classList.remove('hidden');
+    document.querySelector('.game__score').classList.remove('hidden');                                                                  // остановка программы(переделать)
 }
 
-function start() {
+function speed() { //choose speed
+
+}
+
+function start() {  //strat game
     document.querySelector('.game__start').classList.add('hidden');
     document.querySelector('.game__level').classList.remove('hidden');
+    document.querySelector('.level-up').classList.add('hidden');
+    document.querySelector('.game__score').classList.add('hidden');
 
-    let input = document.querySelector('.game__level');
+    let gamePole = document.querySelector('.game__level');
 
 let alfa = 'abcdefghijklmnopqrstuvwxyz';   //abcdefghijklmnopqrstuvwxyz
 let arr = [];
 
 function clear() {
-    if (arr.length >= 2) {                             // кол-во разрешённых выводимых элементов
+    let numberOfEnd = 2;
+    if (arr.length >= numberOfEnd) {                             // кол-во разрешённых выводимых элементов
         clearInterval(time);
         document.querySelector('.game__over').addEventListener('click', () => {
             document.querySelector('.game__over').classList.add('hidden');
             document.querySelector('.game__start').classList.remove('hidden');
+            document.querySelector('.level-up').classList.remove('hidden');
+            document.querySelector('.game__score').classList.remove('hidden');
         });
         document.querySelector('.game__over').classList.remove('hidden');
         document.querySelector('.game__level').classList.add('hidden');
-        input.innerHTML = '';
+        gamePole.innerHTML = '';
     } else {
         function res() {
             for(i = 0; i < 1; i++) {
                 var randomer = alfa.charAt(Math.floor(Math.random() * alfa.length));
             }
             arr.push(randomer);
-            input.innerHTML = arr;
+            gamePole.innerHTML = arr.join(' ');
             }
             res();
     }
@@ -44,7 +56,7 @@ function clear() {
 let time = setInterval(() => {
     clear();
     console.log(arr);
-}, 1000);
+}, speedT);
 
 document.addEventListener('keypress' , function del(e) {
     if (arr.includes(e.key) == true) {
@@ -55,7 +67,37 @@ document.addEventListener('keypress' , function del(e) {
 });
 }
 
-//  mechanic
+// switch level
+
+let scorePole = document.querySelector('.score');
+let score = [];
+var speedT = 1000;
+function minusN() {
+    for(i = 0; i < 1; i++) {
+        var addN = score.push(-1);
+        speedT = speedT + 100;
+        // console.log(speedT);
+    }
+    let sumN = score.reduce(function(prev, item) {
+        return prev + item;
+    }, 0);
+    scorePole.innerHTML = sumN;
+}
+
+function plusN() {
+    for(i = 0; i < 1; i++) {
+        var addN = score.push(1);
+        speedT = speedT - 100;
+        // console.log(speedT);
+    }
+    let sumN = score.reduce(function(prev, item) {
+        return prev + item;
+    }, 0);
+    scorePole.innerHTML = sumN;
+}
+
+
+
 
 
 
