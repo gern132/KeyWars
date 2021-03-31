@@ -117,7 +117,7 @@ button {
     height: 10%;
     border: 1px solid rgb(255, 255, 255);
     color: white;
-    font-size: 28px;
+    font-size: 50px;
     border-radius: 5px;
     display: flex;
     justify-content: center;
@@ -126,10 +126,14 @@ button {
 .game__over {
     width: 60%;
     height: 15%;
+    font-family: Syne Mono, sans-serif;
+    font-weight: bold;
+    font-size: 30px;
     background: #8b2700;
     color: white;
     border-radius: 5px;
     display: flex;
+    margin-bottom: 30%;
     justify-content: center;
     align-items: center;
     animation-name: gameOver;
@@ -175,6 +179,8 @@ button {
     border-radius: 5px;
     padding: 5px 20px 5px 20px;
     color: white;
+    font-family: Syne Mono, sans-serif;
+    font-weight: bold;
 }
 .minus-svg {
     fill: rgb(255, 236, 128);

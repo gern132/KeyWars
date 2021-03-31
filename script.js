@@ -73,27 +73,46 @@ let scorePole = document.querySelector('.score');
 let score = [];
 var speedT = 1000;
 function minusN() {
-    for(i = 0; i < 1; i++) {
-        var addN = score.push(-1);
-        speedT = speedT + 100;
-        // console.log(speedT);
-    }
+    // console.log(speedT);
     let sumN = score.reduce(function(prev, item) {
         return prev + item;
     }, 0);
-    scorePole.innerHTML = sumN;
+
+    if(sumN <= 0) {
+        for(i = 0; i < 1; i++) {
+            var addN = score.push(0);
+            speedT = speedT + 0;
+        }
+        scorePole.innerHTML = 0;
+    }else {
+        for(i = 0; i < 1; i++) {
+            var addN = score.push(-1);
+            speedT = speedT + 100;
+        }
+        scorePole.innerHTML = sumN;
+    }
 }
 
+
 function plusN() {
-    for(i = 0; i < 1; i++) {
-        var addN = score.push(1);
-        speedT = speedT - 100;
-        // console.log(speedT);
-    }
+    // console.log(speedT);
     let sumN = score.reduce(function(prev, item) {
         return prev + item;
     }, 0);
-    scorePole.innerHTML = sumN;
+
+    if(sumN >= 9) {
+        for(i = 0; i < 1; i++) {
+            var addN = score.push(0);
+            speedT = speedT - 0;
+        }
+        scorePole.innerHTML = 9;
+    }else {
+        for(i = 0; i < 1; i++) {
+            var addN = score.push(1);
+            speedT = speedT - 100;
+        }
+        scorePole.innerHTML = sumN;
+    }
 }
 
 
