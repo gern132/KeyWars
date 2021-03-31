@@ -29,7 +29,7 @@ let alfa = 'abcdefghijklmnopqrstuvwxyz';   //abcdefghijklmnopqrstuvwxyz
 let arr = [];
 
 function clear() {
-    let numberOfEnd = 2;
+    let numberOfEnd = 5;
     if (arr.length >= numberOfEnd) {                             // кол-во разрешённых выводимых элементов
         clearInterval(time);
         document.querySelector('.game__over').addEventListener('click', () => {
