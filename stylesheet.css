@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap');
+* {
+    margin: 0;
+}
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.canvas {
+    margin: 0 auto;
+    width: 375px;
+    height: 667px;
+    /* background: rgb(221, 0, 0); */
+}
+.menu {
+    width: 375px;
+    height: 667px;
+    background: url('img/fon.jpg') no-repeat;
+    border-radius: 5px;
+    background-size: cover;
+    text-align: center;
+    margin: 0 auto;
+    animation-name: playWin;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+.menu__name {
+    font-family: Syne Mono, sans-serif;
+    font-size: 20px;
+    color: rgb(0, 0, 0);
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 30%;
+}
+.menu__buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+button:nth-child(1) {
+    margin-top: 30%;
+}
+button {
+    font-family: Syne Mono, sans-serif;
+    font-weight: bold;
+    background: none;
+    outline: none;
+    border: none;
+    margin: 5%;
+    font-size: 18px;
+    padding: 5%;
+    width: 60%;
+    border: 1px solid rgb(7, 7, 7);
+    border-radius: 5px;
+}
+
+/* game */
+
+.game {
+    background: rgb(214, 214, 214);
+    width: 375px;
+    height: 667px;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    animation-name: playWin;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+.game__header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background: rgb(139, 139, 139);
+}
+
+.game__arrow {
+    width: 15%;
+    height: 50%;
+}
+@keyframes playWin {
+    from {
+        opacity: 0;
+    }
+    to {
+    opacity: 1;
+    }
+}
+.game__main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+.game__start {
+    width: 40%;
+    height: 10%;
+    border: 2px solid rgb(255, 251, 37);
+    color: rgb(255, 236, 128);
+    text-transform: uppercase;
+    margin-bottom: 30%;
+    font-size: 28px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.game__level {
+    width: 60%;
+    height: 10%;
+    border: 1px solid #000;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.game__over {
+    width: 60%;
+    height: 15%;
+    background: rgb(255, 0, 0);
+    color: white;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation-name: gameOver;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
+@keyframes gameOver {
+    from {
+        transform: translate(0,-500px);
+    }
+    to {
+        transform: translate(0, 0);
+    }
+}
+
+.hidden {
+    display: none;
+    animation-name: hide;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
+/* @keyframes hide {
+    to {
+        overflow: hidden;
+        height: 0;
+    }
+} */
