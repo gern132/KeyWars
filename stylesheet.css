@@ -100,6 +100,16 @@ button {
     flex-direction: column;
     height: 100%;
 }
+.game__time {
+    font-family: Syne Mono, sans-serif;
+    font-weight: bold;
+    font-size: 28px;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid rgb(255, 251, 37);
+    margin-bottom: 10%;
+}
 .game__start {
     width: 40%;
     height: 10%;
@@ -120,6 +130,7 @@ button {
     font-size: 50px;
     border-radius: 5px;
     display: flex;
+    margin-bottom: 30%;
     justify-content: center;
     align-items: center;
 }
@@ -153,7 +164,6 @@ button {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    margin-bottom: 30%;
 }
 .level-up {
     padding: 10px;
