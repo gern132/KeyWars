@@ -11,7 +11,8 @@ function arrow() {  //step back
     document.querySelector('.game__over').classList.add('hidden'); 
     document.querySelector('.level-up').classList.remove('hidden');
     document.querySelector('.game__score').classList.remove('hidden');  
-    clearInterval(time);                                                            // остановка программы(переделать)
+    clearInterval(time); 
+    clearInterval(timer);                                                            // остановка программы(переделать)
 }
 let time;
 
@@ -21,6 +22,8 @@ function start() {  //strat game
     document.querySelector('.level-up').classList.add('hidden');
     document.querySelector('.game__score').classList.add('hidden');
     startCheck();
+    milliseconds = 0;
+    checkPole.innerHTML = '00:00:00';
     let gamePole = document.querySelector('.game__level');
 
 let alfa = 'abcdefghijklmnopqrstuvwxyz';   //abcdefghijklmnopqrstuvwxyz
