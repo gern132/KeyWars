@@ -108,6 +108,13 @@ button {
     padding: 10px;
     border-radius: 5px;
     border: 1px solid rgb(255, 251, 37);
+}
+.game__record {
+    font-family: Syne Mono, sans-serif;
+    font-weight: bold;
+    font-size: 28px;
+    color: white;
+    padding: 10px;
     margin-bottom: 10%;
 }
 .game__start {

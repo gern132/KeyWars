@@ -12,10 +12,12 @@ function arrow() {  //step back
     document.querySelector('.level-up').classList.remove('hidden');
     document.querySelector('.game__score').classList.remove('hidden');  
     clearInterval(time); 
-    clearInterval(timer);                                                            // остановка программы(переделать)
+    clearInterval(timer);  
+    rec.splice(0);                                                       // остановка программы(переделать)
 }
 let time;
-
+let rec = [];
+let result;
 function start() {  //strat game
     document.querySelector('.game__start').classList.add('hidden');
     document.querySelector('.game__level').classList.remove('hidden');
@@ -25,6 +27,8 @@ function start() {  //strat game
     milliseconds = 0;
     checkPole.innerHTML = '00:00:00';
     let gamePole = document.querySelector('.game__level');
+    document.querySelector('.game__record').innerHTML = 0;
+    result = 0;  
 
 let alfa = 'abcdefghijklmnopqrstuvwxyz';   //abcdefghijklmnopqrstuvwxyz
 let arr = [];
@@ -39,6 +43,7 @@ function clear() {
             document.querySelector('.game__start').classList.remove('hidden');
             document.querySelector('.level-up').classList.remove('hidden');
             document.querySelector('.game__score').classList.remove('hidden');
+            rec.splice(0); 
         });
         document.querySelector('.game__over').classList.remove('hidden');
         document.querySelector('.game__level').classList.add('hidden');
@@ -58,13 +63,18 @@ function clear() {
 time = setInterval(() => {
     clear();
     console.log(arr);
+    document.querySelector('.game__record').innerHTML = 0 + result;
 }, speedT);
 
 document.addEventListener('keypress' , function del(e) {
     if (arr.includes(e.key) == true) {
         var fin = arr.indexOf(e.key); 
-            // console.log(fin);
+            rec.push(e.key.length);
             arr.splice(fin,1);
+            result = rec.reduce(function(prev, item) {
+                return prev + item;
+            }, 0);
+            console.log(result);
     }
 });
 }
@@ -134,8 +144,12 @@ function startCheck() {
             ('0' + dataTime.getUTCMilliseconds()).slice(-3,-1);
     }, 10)
 }
+// record
 
+// let arr = [1, 2, 3, 4];
 
+// arr.splice(0);
+// console.log(arr);
 
 
 
